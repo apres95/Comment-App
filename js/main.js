@@ -14,25 +14,29 @@ function comment() {
 
 	newComment.appendChild(newUser)
 	newComment.appendChild(newText)
-	document.getElementById("comments").appendChild(newComment)
+	document.getElementById("comments").appendChild(newComment);
 
-	var deleteBtn = document.createElement("BUTTON");        // Create a <button> element
-	var deleteText = document.createTextNode("Delete Comment");       // Create a text node
+	$(".button").ready(function(){
+   		$(".commentBox:odd").css("background-color", "#9494b8");
+	});
+
+	var dateTime = document.createTextNode("Time");
+	newComment.appendChild(dateTime);
+
+	var deleteBtn = document.createElement("BUTTON");        
+	var deleteText = document.createTextNode("Delete Comment");    
 	deleteBtn.appendChild(deleteText);  
-	deleteBtn.className = "deleteBtn"
+	deleteBtn.className = "deleteBtn";
 	newComment.appendChild(deleteBtn);	
 
-	$(document).ready(function(){
-    $("deleteBtn").click(function(){
-        $("newText").hide();
+    $(deleteBtn).on("click", function(){
+        $(newText).hide();
+        deleteText.nodeValue="Undo Delete";
+        $(deleteBtn).on("click", function(){
+        	$(newText).show();
+        	deleteText.nodeValue="Delete Comment";
+   		});
     });
-    // $("").click(function(){
-    //     $("p").show();
-    // });
-});
 
-
-// function toggleLi() {
-// 	comments.style.display = 'block';
-// }
+	
 }
