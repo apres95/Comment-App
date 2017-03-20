@@ -1,18 +1,38 @@
-function todoList() {
-	var username = document.getElementById("username").value
-	var comment = document.getElementById("comment").value
+function comment() {
+	var user = document.getElementById("user").value
+	var text = document.getElementById("text").value
 
-	var userNameText = document.createTextNode("Username: " + username)
-	var commentText = document.createTextNode("Comment: " + comment)
+	var yourName = document.createTextNode(user + " " + "says: ")
+	var yourText = document.createTextNode(text)
 
-	var newListItem = document.createElement("LI")
-	newListItem.className = "list-group-item"
-	var newUserName = document.createElement("H3")
-	newUserName.appendChild(userNameText)
-	var newComment = document.createElement("P")
-	newComment.appendChild(commentText)
+	var newComment = document.createElement("LI")
+	newComment.className = "commentBox"
+	var newUser = document.createElement("H3")
+	newUser.appendChild(yourName)
+	var newText = document.createElement("P")
+	newText.appendChild(yourText)
 
-	newListItem.appendChild(newUserName)
-	newListItem.appendChild(newComment)
-	document.getElementById("commentList").appendChild(newListItem)
+	newComment.appendChild(newUser)
+	newComment.appendChild(newText)
+	document.getElementById("comments").appendChild(newComment)
+
+	var deleteBtn = document.createElement("BUTTON");        // Create a <button> element
+	var deleteText = document.createTextNode("Delete Comment");       // Create a text node
+	deleteBtn.appendChild(deleteText);  
+	deleteBtn.className = "deleteBtn"
+	newComment.appendChild(deleteBtn);	
+
+	$(document).ready(function(){
+    $("deleteBtn").click(function(){
+        $("newText").hide();
+    });
+    // $("").click(function(){
+    //     $("p").show();
+    // });
+});
+
+
+// function toggleLi() {
+// 	comments.style.display = 'block';
+// }
 }

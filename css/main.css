@@ -1,10 +1,47 @@
 body {
 	text-align:center;
-
+	background-image: url(../img/people.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Yellowtail', cursive;
 }
 
 h1 {
 	margin-bottom:50px;
+	font-family: 'Yellowtail', cursive;
+	font-size: 80px;
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.button {
+	padding: 6px 70px;
+	border-radius: 5px;
+	color: white;
+	background-color: #D50EA4;
+	font-family: 'Yellowtail', cursive;
+	border-color: black;
+	font-size: 22px;
+}
+.commentBox {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+
+.deleteBtn {
+	background-color: black;
+	position: relative;
+  	display: block;
+  	padding: 10px 15px;
+  	margin: 10px 10px 10px 370px;
+  	border: 1px solid #ddd;
+  	border-radius: 5px;
+  	color: white;
+
 }
 
 input {
