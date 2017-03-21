@@ -11,9 +11,8 @@ function comment() {
 	$(".button").ready(function(){
    		$(".commentBox:odd").css("background-color", "#9494b8");
 	});
-
-	var date = document.createElement(Date());
-	newComment.appendChild(date);
+	
+	document.getElementById("demo").innerHTML = Date();
 	
 
 	var newUser = document.createElement("H3")
