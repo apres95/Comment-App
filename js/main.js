@@ -6,7 +6,16 @@ function comment() {
 	var yourText = document.createTextNode(text)
 
 	var newComment = document.createElement("LI")
-	newComment.className = "commentBox"
+	newComment.className = "commentBox";
+
+	$(".button").ready(function(){
+   		$(".commentBox:odd").css("background-color", "#9494b8");
+	});
+
+	var date = document.createElement(Date());
+	newComment.appendChild(date);
+	
+
 	var newUser = document.createElement("H3")
 	newUser.appendChild(yourName)
 	var newText = document.createElement("P")
@@ -16,13 +25,6 @@ function comment() {
 	newComment.appendChild(newText)
 	document.getElementById("comments").appendChild(newComment);
 
-	$(".button").ready(function(){
-   		$(".commentBox:odd").css("background-color", "#9494b8");
-	});
-
-	var dateTime = document.createTextNode("Time");
-	newComment.appendChild(dateTime);
-
 	var deleteBtn = document.createElement("BUTTON");        
 	var deleteText = document.createTextNode("Delete Comment");    
 	deleteBtn.appendChild(deleteText);  
@@ -30,12 +32,8 @@ function comment() {
 	newComment.appendChild(deleteBtn);	
 
     $(deleteBtn).on("click", function(){
-        $(newText).hide();
+        $(newText).toggle();
         deleteText.nodeValue="Undo Delete";
-        $(deleteBtn).on("click", function(){
-        	$(newText).show();
-        	deleteText.nodeValue="Delete Comment";
-   		});
     });
 
 	

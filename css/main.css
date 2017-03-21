@@ -32,12 +32,23 @@ h1 {
   border-radius: 2px;
 }
 
+#demo {
+	color: white;
+}
+
+.time {
+	color: red;
+	position: relative;
+  	display: block;
+	margin: 10px 10px 10px 380px;
+}
+
 .deleteBtn {
 	background-color: black;
 	position: relative;
   	display: block;
-  	padding: 10px 15px;
-  	margin: 10px 10px 10px 370px;
+  	padding: 5px 10px;
+  	margin: 10px 10px 10px 380px;
   	border: 1px solid #ddd;
   	border-radius: 5px;
   	color: white;
