@@ -11,28 +11,42 @@ function comment() {
 	$(".button").ready(function(){
    		$(".commentBox:odd").css("background-color", "#9494b8");
 	});
+
+	var date = new Date();
+	var dateText = document.createTextNode(date);
+	// var newDate = document.createElement("H6");
 	
-	document.getElementById("demo").innerHTML = Date();
+	newComment.appendChild(dateText);
+
+	// document.getElementById("demo").innerHTML = Date();
 	
 
 	var newUser = document.createElement("H3")
-	newUser.appendChild(yourName)
 	var newText = document.createElement("P")
+	
+	newUser.appendChild(yourName)
 	newText.appendChild(yourText)
 
 	newComment.appendChild(newUser)
 	newComment.appendChild(newText)
 	document.getElementById("comments").appendChild(newComment);
 
-	var deleteBtn = document.createElement("BUTTON");        
-	var deleteText = document.createTextNode("Delete Comment");    
-	deleteBtn.appendChild(deleteText);  
+	var deleteBtn = document.createElement("BUTTON");    
 	deleteBtn.className = "deleteBtn";
+
+	var deleteText = document.createTextNode("Delete Comment"); 
+
+	deleteBtn.appendChild(deleteText);  
 	newComment.appendChild(deleteBtn);	
 
     $(deleteBtn).on("click", function(){
         $(newText).toggle();
-        deleteText.nodeValue="Undo Delete";
+        if ($(this).text() == "Delete Comment") {
+			$(this).text("Undo Delete"); 
+		} else {
+     		$(this).text("Delete Comment"); 
+  		}; 
+        // deleteText.nodeValue="Undo Delete";
     });
 
 	
